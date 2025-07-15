@@ -1,0 +1,168 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Color Variables */
+  :root {
+    --primary-bg: #2d2d2d;
+    --secondary-bg: #3a3a3a;
+    --display-bg: #1e1e1e;
+    --operator-bg: #ff9500;
+    --operator-hover: #ffaa33;
+    --number-bg: #4a4a4a;
+    --number-hover: #5a5a5a;
+    --action-bg: #a6a6a6;
+    --action-hover: #b6b6b6;
+    --text-light: #ffffff;
+    --text-dark: #000000;
+    --error-color: #ff3b30;
+  }
+  
+  /* Body and Container */
+  body {
+    background: linear-gradient(135deg, #1a1a1a, #3d3d3d);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  /* Calculator Styling */
+  .calculator {
+    background-color: var(--primary-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Display Area */
+  .display {
+    padding: 20px;
+    background-color: var(--display-bg);
+    text-align: right;
+  }
+  
+  .display input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: var(--text-light);
+    font-size: 2.5rem;
+    padding: 10px;
+    text-align: right;
+    outline: none;
+    pointer-events: none;
+  }
+  
+  /* Button Rows */
+  .button-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  /* Button Styles */
+  input[type="button"] {
+    flex: 1;
+    height: 60px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  /* Number Buttons */
+  .number {
+    background-color: var(--number-bg);
+    color: var(--text-light);
+  }
+  
+  .number:hover {
+    background-color: var(--number-hover);
+  }
+  
+  /* Operator Buttons */
+  .operator {
+    background-color: var(--operator-bg);
+    color: var(--text-dark);
+    font-weight: bold;
+  }
+  
+  .operator:hover {
+    background-color: var(--operator-hover);
+  }
+  
+  /* Action Buttons (AC, DEL) */
+  .clear, .delete {
+    background-color: var(--action-bg);
+    color: var(--text-dark);
+  }
+  
+  .clear:hover, .delete:hover {
+    background-color: var(--action-hover);
+  }
+  
+  /* Special Buttons */
+  .decimal, .sign, .parenthesis, .memory {
+    background-color: var(--secondary-bg);
+    color: var(--text-light);
+  }
+  
+  .decimal:hover, .sign:hover, .parenthesis:hover, .memory:hover {
+    background-color: #4d4d4d;
+  }
+  
+  /* Enter/Equals Button */
+  .enter {
+    background-color: var(--operator-bg);
+    color: var(--text-dark);
+    font-weight: bold;
+  }
+  
+  .enter:hover {
+    background-color: var(--operator-hover);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 400px) {
+    input[type="button"] {
+      height: 50px;
+      font-size: 1.3rem;
+      margin: 4px;
+    }
+    
+    .display input {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Active State for Buttons */
+  input[type="button"]:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Error State */
+  .error {
+    color: var(--error-color);
+    animation: shake 0.5s;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+  }
